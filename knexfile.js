@@ -2,8 +2,6 @@
 
 module.exports = {
   development: {
-    // client: 'pg',
-    // connection: 'postgres://localhost/cjs-web-store'
     client: 'postgresql',
     connection: {
       database: 'library_managment',
@@ -17,7 +15,7 @@ module.exports = {
   },
   test: {
     client: 'pg',
-    connection: 'postgres://localhost/test-cjs-web-store'
+    connection: 'postgres://localhost/test-library_managment'
   },
   production: {
     client: 'pg',
