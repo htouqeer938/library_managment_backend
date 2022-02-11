@@ -1,0 +1,25 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "migration": "npx knex migrate:latest --knexfile knexfile.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "knex": "^0.21.21",
+    "morgan": "~1.8.1",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.3",
+    "serve-favicon": "~2.4.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^3.5.3",
+    "supertest": "^3.4.2"
+  }
+}
