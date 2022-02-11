@@ -16,6 +16,9 @@ module.exports = {
   deletestudent(id) {
     return knex('student').where('id', id).del();
   },
+  countstudent() {
+    return knex('student').count('id');
+  },
   getAllbook() {
     return knex('book');
   },
@@ -30,5 +33,8 @@ module.exports = {
   },
   deletebook(id) {
     return knex('book').where('id', id).del();
+  },
+  countbook() {
+    return knex('book').count('id');
   }
 }

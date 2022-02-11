@@ -69,6 +69,12 @@ router.delete('/student/:id', isValidId, (req, res) => {
     });
   });
 });
+
+router.get('/studentcount', (req, res) => {
+  queries.countstudent().then((count_student) => {
+    res.json(count_student)
+  })
+});
 // Student Routes End
 
 // Books Routes Start
@@ -117,6 +123,11 @@ router.delete('/book/:id', isValidId, (req, res) => {
   });
 });
 
+router.get('/bookcount', (req, res) => {
+  queries.countbook().then(count => {
+    res.json(count)
+  })
+});
 // Student Routes End
 
 
