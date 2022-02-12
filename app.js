@@ -12,9 +12,18 @@ const students = require('./api/students');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
+// Allow All origin
+app.use(cors({
+  origin: "*",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  preflightContinue: false,
+  optionsSuccessStatus: 204
+}));
+
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, GET, POST, OPTIONS, DELETE, PUT");
   next();
 });
 
@@ -31,13 +40,6 @@ app.use(function (req, res, next) {
   err.status = 404;
   next(err);
 });
-
-// Allow All origin
-// app.use(cors({
-//   origin: '*'
-// }));
-
-
 
 // error handler
 app.use(function (err, req, res, next) {
